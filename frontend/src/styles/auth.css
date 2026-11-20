@@ -1,0 +1,26 @@
+.auth {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  background: radial-gradient(circle at 20% 10%, var(--primario-claro), transparent 45%), var(--fondo);
+}
+.auth-tarjeta {
+  width: 100%;
+  max-width: 420px;
+  background: var(--superficie);
+  padding: 2.25rem 2rem;
+  border-radius: var(--radio-grande);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+.auth-marca {
+  text-align: center;
+  color: var(--primario);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.5rem;
+}
+.auth-tarjeta h1 { font-size: 1.5rem; text-align: center; margin-bottom: 0.25rem; }
+.auth-subtitulo { color: var(--texto-tenue); font-size: 0.9rem; text-align: center; margin-bottom: 1.5rem; }
+.auth-pie { margin-top: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; }

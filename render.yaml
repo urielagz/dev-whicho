@@ -1,0 +1,42 @@
+# Dev Whicho - despliegue en Render (Blueprint)
+#
+# IMPORTANTE: los nombres "miztontli-backend" y "miztontli-db" se conservan a
+# propósito. Si se cambian, Render crea un servicio y una base de datos
+# NUEVOS (vacíos) y la URL pública del backend cambia. Para renombrarlos de
+# verdad: crea los nuevos, migra los datos y actualiza docs/js/config.js.
+services:
+  - type: web
+    name: miztontli-backend
+    runtime: node
+    plan: free
+    rootDir: backend
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: APP_NAME
+        value: Dev Whicho
+      - key: DATABASE_URL
+        fromDatabase:
+          name: miztontli-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: RESEND_API_KEY
+        sync: false
+      - key: MAIL_FROM
+        sync: false
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false
+      - key: CLOUDINARY_FOLDER
+        value: dev-whicho
+
+databases:
+  - name: miztontli-db
+    plan: free

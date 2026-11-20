@@ -1,0 +1,8 @@
+.claude/
+node_modules/
+backend/uploads/*
+.env
+.DS_Store
+dist/
+*.tsbuildinfo
+*.log

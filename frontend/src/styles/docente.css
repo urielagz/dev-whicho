@@ -1,0 +1,83 @@
+/* Gestor de materias del docente (antes era un iframe con su propia hoja). */
+.gestor {
+  display: flex;
+  min-height: calc(100vh - var(--altura-navbar) - 3rem);
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  overflow: hidden;
+  box-shadow: var(--sombra);
+}
+
+.gestor-lateral { width: 290px; flex-shrink: 0; border-right: 1px solid var(--borde); display: flex; flex-direction: column; }
+.gestor-lateral-cabecera { display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 1.25rem; border-bottom: 1px solid var(--borde); }
+.gestor-lista { list-style: none; overflow-y: auto; padding: 0.5rem 0; }
+.gestor-lista li { padding: 0.45rem 1.25rem; }
+.gestor-lista li:hover { background: var(--fondo-suave); }
+.gestor-lista a {
+  display: block;
+  text-decoration: none;
+  color: var(--texto-tenue);
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.gestor-lista a.activa { color: var(--primario); font-weight: 700; }
+.gestor-acciones { display: flex; gap: 0.35rem; margin-top: 0.35rem; }
+
+.gestor-principal { flex: 1; min-width: 0; padding: 1.75rem; overflow-y: auto; }
+.bienvenida { text-align: center; color: var(--texto-tenue); margin-top: 10vh; }
+.bienvenida h2 { color: var(--texto); margin-bottom: 0.5rem; }
+
+.materia-cabecera {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--borde);
+}
+.materia-cabecera .fila-botones { margin-top: 0; }
+
+.tema { border: 1px solid var(--borde); border-radius: var(--radio); padding: 1.25rem; margin-bottom: 1.25rem; box-shadow: var(--sombra); }
+.tema-cabecera { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.5rem; }
+.tema-cabecera .fila-botones { margin-top: 0; }
+.tema > p { color: var(--texto-tenue); }
+.tema-items { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 1rem; margin-top: 1rem; }
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  border: 1px dashed var(--borde);
+  border-radius: 8px;
+  padding: 0.9rem 1rem;
+  background: var(--fondo-suave);
+  font-size: 0.9rem;
+}
+.item p { color: var(--texto-tenue); font-size: 0.85rem; }
+.item .fila-botones { margin-top: 0.5rem; }
+
+.entrega { border: 1px solid var(--borde); border-radius: 8px; padding: 1rem; background: var(--fondo-suave); }
+.entrega-cabecera { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.5rem; color: var(--texto-tenue); font-size: 0.85rem; }
+.entrega-cabecera strong { color: var(--texto); font-size: 1rem; }
+.entrega-archivos { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.5rem 0 0.75rem; }
+.entrega-archivos a {
+  font-size: 0.8rem;
+  color: var(--primario);
+  border: 1px solid var(--primario);
+  border-radius: 6px;
+  padding: 0.2rem 0.6rem;
+  text-decoration: none;
+}
+.entrega form { margin-top: 0.75rem; }
+
+@media (max-width: 900px) {
+  .gestor { flex-direction: column; }
+  .gestor-lateral { width: 100%; max-height: 260px; border-right: none; border-bottom: 1px solid var(--borde); }
+  .gestor-principal { padding: 1rem; }
+}

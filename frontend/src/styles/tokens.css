@@ -1,0 +1,28 @@
+/* Paleta y medidas únicas (antes repetidas, con variaciones, en 5 hojas). */
+:root {
+  --primario: #00bb77;
+  --primario-hover: #009f65;
+  --primario-claro: #d9f7ea;
+  --naranja: #fa855a;
+  --naranja-claro: #ffe7db;
+  --rojo: #c93638;
+  --rojo-claro: #fbe4e4;
+
+  --fondo: #f1f5f9;
+  --fondo-suave: #f8fafc;
+  --superficie: #ffffff;
+  --texto: #0f172a;
+  --texto-tenue: #64748b;
+  --borde: #e2e8f0;
+
+  --madera: #92613a;
+  --madera-oscura: #6b4423;
+  --papel: #fffdf7;
+
+  --radio: 10px;
+  --radio-grande: 14px;
+  --sombra: 0 1px 3px rgba(15, 23, 42, 0.06);
+  --sombra-alta: 0 6px 16px rgba(15, 23, 42, 0.12);
+  --altura-navbar: 64px;
+  --fuente: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+}

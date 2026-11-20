@@ -1,0 +1,53 @@
+/* Estructura común a los paneles de alumno, docente y admin. */
+.panel { min-height: 100vh; display: flex; flex-direction: column; }
+
+.panel-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  min-height: var(--altura-navbar);
+  background: var(--superficie);
+  border-bottom: 1px solid var(--borde);
+  box-shadow: var(--sombra);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 2rem;
+}
+
+.logo { font-size: 1.3rem; font-weight: 700; color: var(--primario); white-space: nowrap; }
+.logo span { color: var(--texto-tenue); font-size: 0.95rem; font-weight: 400; }
+
+.pestanas { display: flex; gap: 0.35rem; background: var(--fondo); padding: 0.3rem; border-radius: var(--radio); }
+.pestana {
+  padding: 0.45rem 1.05rem;
+  border-radius: 8px;
+  font-weight: 600;
+  color: var(--texto-tenue);
+  text-decoration: none;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+.pestana:hover { color: var(--primario); }
+.pestana.activa { background: var(--superficie); color: var(--primario); box-shadow: var(--sombra); }
+
+.panel-navbar-derecha { display: flex; align-items: center; gap: 0.6rem; }
+.usuario-chip {
+  font-weight: 600;
+  background: var(--primario-claro);
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  white-space: nowrap;
+}
+
+.panel-contenido { flex: 1; padding: 1.5rem 2rem; }
+.seccion { max-width: 1100px; margin: 0 auto; }
+.seccion-titulo { margin-bottom: 1.25rem; }
+
+@media (max-width: 900px) {
+  .panel-navbar { flex-wrap: wrap; padding: 0.75rem 1rem; }
+  .pestanas { order: 3; width: 100%; justify-content: center; overflow-x: auto; }
+  .panel-contenido { padding: 1rem; }
+  .usuario-chip { display: none; }
+}

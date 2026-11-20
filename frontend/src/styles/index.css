@@ -1,0 +1,10 @@
+/* Orden: tokens -> base -> componentes compartidos -> pantallas. */
+@import "./tokens.css";
+@import "./base.css";
+@import "./componentes.css";
+@import "./auth.css";
+@import "./panel.css";
+@import "./chat.css";
+@import "./perfil.css";
+@import "./docente.css";
+@import "./alumno.css";
